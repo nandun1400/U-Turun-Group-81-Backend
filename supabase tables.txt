@@ -1,0 +1,58 @@
+
+////////// User authentication/////////////
+CREATE TABLE u_turn_user ( 
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    mobile VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+
+////////// otp Queue storage //////////////
+CREATE TABLE u_turn_otpdata (
+    id SERIAL PRIMARY KEY,
+    method VARCHAR(20) NOT NULL,
+    contact VARCHAR(100) NOT NULL,
+    OTP VARCHAR(20) NOT NULL
+);
+
+
+//////////// availabale vehicles///////////
+CREATE TABLE u_turn_available_vehicles (
+    id VARCHAR(36) PRIMARY KEY,
+    brand VARCHAR(100) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    imageurl VARCHAR(255) NOT NULL,
+    power INTEGER NOT NULL,
+    numberofpeople INTEGER NOT NULL,
+    capacityforbags INTEGER NOT NULL,
+    priceindollars NUMERIC(10, 2) NOT NULL,
+    priceperkilometer NUMERIC(10, 2) NOT NULL,
+    pricefordriverperday NUMERIC(10, 2) NOT NULL,
+    numberofvehiclesavailable INTEGER NOT NULL,
+    description TEXT NOT NULL
+);
+
+
+//////////// rented vehicles///////////
+CREATE TABLE u_turn_rented_vehicles (
+    id VARCHAR(36) PRIMARY KEY,
+    brand VARCHAR(100) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    imageurl VARCHAR(255) NOT NULL,
+    power INTEGER NOT NULL,
+    numberofpeople INTEGER NOT NULL,
+    capacityforbags INTEGER NOT NULL,
+    priceindollars NUMERIC(10, 2) NOT NULL,
+    priceperkilometer NUMERIC(10, 2) NOT NULL,
+    pricefordriverperday NUMERIC(10, 2) NOT NULL,
+    numberofvehiclesavailable INTEGER NOT NULL,
+    description TEXT NOT NULL
+);
+
+
